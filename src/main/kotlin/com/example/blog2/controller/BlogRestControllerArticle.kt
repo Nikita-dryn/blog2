@@ -1,6 +1,5 @@
 package com.example.blog2.controller
 
-import com.example.blog2.dto.blog.ArticleRequest
 import com.example.blog2.pojo.Article
 import com.example.blog2.repositories.RepoPerson
 import com.example.blog2.service.blog.ValidationServiceArticle
@@ -9,12 +8,8 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import java.net.URI
 
 @RestController
 @RequestMapping("/api/v1/article")
