@@ -1,11 +1,6 @@
-FROM gradle:4.5-jdk8-alpine as builder
-USER root
-WORKDIR /builder
-ADD src/main/kotlin/com/example/blog2 /builder
-RUN gradle build --stacktrace
-
 FROM openjdk:19-jre-alpine
-WORKDIR /app
+VOLUME /tmp
 EXPOSE 8080
-COPY --from = builder /libs/blog2-1.jar .
-CMD ["java", "-jar", "server.jar"]
+ARG JAR_FILE=/build/libs/blog2-1-plain.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
